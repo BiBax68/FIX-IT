@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact – FIX’IT</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="container header-container">
+        <div class="container-logo">
+            <a href="index.html" class="logo">
+                <img src="assets/img/Fixit_logo.png" alt="FIX’IT Logo" />
+              <span class="logo">FIX’IT</span>
+            </a>
+        </div>
+        <nav class="navbar">
+          <ul>
+            <li><a href="index.html#features">Fonctionnalités</a></li>
+            <li><a href="index.html#how">Comment ça marche ?</a></li>
+            <li><a href="index.html#community">Communauté</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="contact.html" class="active">Contact</a></li>
+          </ul>
+        </nav>
+        <button class="burger" id="burger">&#9776;</button>
+      </div>
+    </header>
+    <section class="contact-section">
+      <div class="contact-container">
+        <h1 class="contact-title">Contactez-nous</h1>
+        <form class="contact-form" id="contactForm" autocomplete="off">
+          <div class="form-message" id="formMessage"></div>
+          <label for="name">Votre nom</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            required
+            placeholder="Votre nom ou pseudo"
+          />
+          <label for="email">Votre email</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            required
+            placeholder="exemple@email.com"
+          />
+          <label for="message">Votre message</label>
+          <textarea
+            id="message"
+            name="message"
+            required
+            placeholder="Votre question, suggestion ou demande..."
+          ></textarea>
+          <button type="submit">Envoyer</button>
+        </form>
+        <div class="contact-extra">
+          Ou écrivez-nous directement à <strong>contact@fixit.app</strong><br />
+          Retrouvez-nous aussi sur <a href="#">Instagram</a> et
+          <a href="#">LinkedIn</a>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <div class="container">
+        <p>
+          &copy; 2025 FIX’IT. Tous droits réservés.
+        </p>
+      </div>
+    </footer>
+    <script>
+      // Burger menu
+      const burger = document.getElementById("burger");
+      const nav = document.querySelector("header nav");
+      burger.addEventListener("click", () => nav.classList.toggle("open"));
+
+      // Form validation & simulation envoi
+      const form = document.getElementById("contactForm");
+      const msgBox = document.getElementById("formMessage");
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        msgBox.className = "form-message";
+        msgBox.textContent = "";
+        // Simule un envoi (remplacer par ta logique backend)
+        if (
+          !form.name.value.trim() ||
+          !form.email.value.trim() ||
+          !form.message.value.trim()
+        ) {
+          msgBox.classList.add("error");
+          msgBox.textContent = "Merci de remplir tous les champs.";
+          return;
+        }
+        if (!/^[^@]+@[^@]+\.[a-z]{2,}$/i.test(form.email.value.trim())) {
+          msgBox.classList.add("error");
+          msgBox.textContent = "L'adresse email n'est pas valide.";
+          return;
+        }
+        msgBox.classList.add("success");
+        msgBox.textContent =
+          "Merci pour votre message ! Nous revenons vers vous très vite.";
+        form.reset();
+      });
+    </script>
+  </body>
+</html>

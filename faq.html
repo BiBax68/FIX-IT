@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FAQ – FIX’IT</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="container header-container">
+        <div class="container-logo">
+          <a href="index.html" class="logo">
+              <img src="assets/img/Fixit_logo.png" alt="FIX’IT Logo" />
+            <span class="logo">FIX’IT</span>
+          </a>
+      </div>
+        <nav class="navbar">
+          <ul>
+            <li><a href="index.html#features">Fonctionnalités</a></li>
+            <li><a href="index.html#how">Comment ça marche ?</a></li>
+            <li><a href="index.html#community">Communauté</a></li>
+            <li><a href="faq.html" class="active">FAQ</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+        <button class="burger" id="burger">&#9776;</button>
+      </div>
+    </header>
+    <section class="faq-section">
+      <div class="faq-container">
+        <h1 class="faq-title">Foire aux questions</h1>
+        <div class="faq-list">
+          <div class="faq-item">
+            <button class="faq-question">
+              <span class="arrow">&#9654;</span>
+              FIX’IT fonctionne-t-il sur tous les appareils&nbsp;?
+            </button>
+            <div class="faq-answer">
+              Oui, FIX’IT fonctionne sur la plupart des appareils
+              électroménagers, électroniques, automobiles, plomberie et autres
+              objets du quotidien. L’IA s’adapte et te guide selon chaque objet.
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              <span class="arrow">&#9654;</span>
+              Comment utiliser la fonction Scan & Diagnostic&nbsp;?
+            </button>
+            <div class="faq-answer">
+              Lance l’appli, choisis “Scanner” ou “Prendre une photo”, cadre
+              l’objet endommagé, et laisse l’IA analyser l’image. Tu obtiens un
+              diagnostic instantané et les solutions adaptées.
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              <span class="arrow">&#9654;</span>
+              Puis-je contacter un expert en direct&nbsp;?
+            </button>
+            <div class="faq-answer">
+              Oui ! Si la réparation est complexe, FIX’IT te met en relation
+              avec un professionnel (chat, visio ou rendez-vous). Tu es
+              accompagné de A à Z.
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              <span class="arrow">&#9654;</span>
+              L’application propose-t-elle des rappels d’entretien&nbsp;?
+            </button>
+            <div class="faq-answer">
+              Oui, tu peux enregistrer tes appareils. FIX’IT t’envoie des
+              rappels et des checklists d’entretien pour prolonger la durée de
+              vie de tes objets.
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              <span class="arrow">&#9654;</span>
+              Est-ce gratuit&nbsp;?
+            </button>
+            <div class="faq-answer">
+              L’application propose un accès gratuit à de nombreuses
+              fonctionnalités. Certaines options avancées ou l’aide d’un expert
+              peuvent être payantes, sans abonnement obligatoire.
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              <span class="arrow">&#9654;</span>
+              Mes données sont-elles protégées&nbsp;?
+            </button>
+            <div class="faq-answer">
+              Oui, FIX’IT respecte la confidentialité. Tes données et photos
+              restent privées et ne sont jamais revendues.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <div class="container">
+        <p>
+          &copy; 2025 FIX’IT. Tous droits réservés.
+        </p>
+      </div>
+    </footer>
+    <script>
+      // Burger menu mobile (si besoin)
+      const burger = document.getElementById("burger");
+      const nav = document.querySelector("header nav");
+      burger.addEventListener("click", () => nav.classList.toggle("open"));
+
+      // Accordéon FAQ
+      document.querySelectorAll(".faq-question").forEach((btn) => {
+        btn.addEventListener("click", function () {
+          const item = btn.closest(".faq-item");
+          item.classList.toggle("open");
+          // Optionnel : fermer les autres
+          document.querySelectorAll(".faq-item").forEach((other) => {
+            if (other !== item) other.classList.remove("open");
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
