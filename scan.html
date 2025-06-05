@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Scanner un objet – FIX’IT</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container header-container">
+        <div class="container-logo">
+          <a href="index.html" class="logo">
+            <img src="assets/img/Fixit_logo.png" alt="FIX’IT Logo" />
+            <span class="logo">FIX’IT</span>
+          </a>
+        </div>
+        <nav class="navbar" id="navbar">
+          <ul>
+            <li><a href="#features">Fonctionnalités</a></li>
+            <li><a href="#how">Comment ça marche ?</a></li>
+            <li><a href="#community">Communauté</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+        <button class="burger" id="burger">&#9776;</button>
+      </div>
+    </header>
+    <main>
+      <section class="scan-section">
+        <div class="scan-card">
+          <div class="icon">&#128247;</div>
+          <h1>Scanner un objet</h1>
+          <p>
+            Prends en photo ton appareil ou scanne-le en direct pour identifier
+            la panne.<br />
+            FIX’IT analyse instantanément ton objet et te propose la meilleure
+            solution de réparation.<br />
+            <small
+              ><em
+                >(Démonstration visuelle, aucune donnée n'est transmise)</em
+              ></small
+            >
+          </p>
+          <button
+            class="scan-main-btn"
+            onclick="alert('Démo visuelle seulement !')"
+          >
+            <span>&#128247;</span> Démarrer le scan
+          </button>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="container">
+        <p>
+          &copy; 2025 FIX’IT. Tous droits réservés. |
+          <a href="mentions-legales.html">Mentions légales</a>
+        </p>
+      </div>
+    </footer>
+    <script>
+      // Burger menu mobile
+      const burger = document.getElementById("burger");
+      const nav = document.querySelector("header nav");
+      burger.addEventListener("click", () => nav.classList.toggle("open"));
+    </script>
+  </body>
+</html>
